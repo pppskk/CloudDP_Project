@@ -15,10 +15,11 @@ jobs:
         run: npm install
 
       - name: Run testing
-        run: |
-          output=$(node tests/unit_test.js)
+        run: node tests/unit_test.js
+        # |
+          # output=$(node tests/unit_test.js)
 
-          if [ $output -ne 0 ]; then
-            echo "Error: code $output"
-            exit 1
-          fi
+          # if [ $output -ne 0 ]; then
+          #   echo "Error: code $output"
+          #   exit 1
+          # fi
