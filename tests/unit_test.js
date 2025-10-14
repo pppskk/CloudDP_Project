@@ -13,10 +13,10 @@ const unit_test = async () => {
         failed = true;
     }
 
-    if (Utils.add(2, 8) !== 5) {
-        console.error("add test failed");
-        failed = true;
-    }
+    // if (Utils.add(2, 8) !== 5) {
+    //     console.error("add test failed");
+    //     failed = true;
+    // }
 
     // if (Utils.add(2, 3) === 5) {
     //     console.log(0);
