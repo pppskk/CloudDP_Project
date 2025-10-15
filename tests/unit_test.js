@@ -4,14 +4,14 @@ const unit_test = async () => {
   let failed = false;
 
   // Test องศาไปฟาเรนไฮต์
-  if (Utils.celsiusToFahrenheit(0) !== 32) {
+  if (Utils.ctof(0) !== 32) {
     console.error("celsiusToFahrenheit test failed !!!!");
     failed = true;
   } else {
     console.log("celsiusToFahrenheit test passed");
   }
 
-  if (Utils.celsiusToFahrenheit(100) !== 212) {
+  if (Utils.ctof(100) !== 212) {
     console.error("celsiusToFahrenheit test failed !!!!");
     failed = true;
   } else {
@@ -19,7 +19,7 @@ const unit_test = async () => {
   }
 
   // Test กิโลไปปอนด์
-  const kgResult = Utils.kilogramToPound(1);
+  const kgResult = Utils.kilogramsToPounds(1);
   if (Math.abs(kgResult - 2.20462) > 0.00001) {
     console.error("kilogramToPound test failed !!!!");
     failed = true;
@@ -28,7 +28,7 @@ const unit_test = async () => {
   }
 
   // Test กิโลเมตรไปไมล์
-  const kmResult = Utils.kilometerToMile(1);
+  const kmResult = Utils.kmhToMs(1);
   if (Math.abs(kmResult - 0.621371) > 0.00001) {
     console.error("kilometerToMile test failed !!!!");
     failed = true;
