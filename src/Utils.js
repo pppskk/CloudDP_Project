@@ -7,8 +7,8 @@ function kilogramsToPounds(kilograms) {
   return kilograms * poundsPerKilogram;
 }
 
-function kmhToMs(kmh) {
-  return kmh * (1000 / 3600);
+function kmToMiles(km) {
+  return km * 0.621371;
 }
 
 function minutesToHours(minutes) {
@@ -36,7 +36,7 @@ function convertTHBtoJPY(thbAmount, rate = 4.2) {
 module.exports = {
   ctof,
   kilogramsToPounds,
-  kmhToMs,
+  kmToMiles,
   minutesToHours, hoursToDays, minutesToDays,
   convertTHBtoJPY
 };

@@ -28,7 +28,7 @@ const unit_test = async () => {
   }
 
   // Test กิโลเมตรไปไมล์
-  const kmResult = Utils.kmhToMs(1);
+  const kmResult = Utils.kmToMiles(1);
   if (Math.abs(kmResult - 0.621371) > 0.00001) {
     console.error("kilometerToMile test failed !!!!");
     failed = true;

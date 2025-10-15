@@ -1,6 +1,6 @@
-function kmhToMs(kmh) {
-  return kmh * (1000 / 3600);
+function kmToMiles(km) {
+  return km * 0.621371;
 }
 
-module.exports = { kmhToMs };
+module.exports = { kmToMiles };
 
