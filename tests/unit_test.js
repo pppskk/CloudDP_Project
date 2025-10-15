@@ -1,37 +1,87 @@
 const Utils = require("../src/Utils");
 
 const unit_test = async () => {
-    
-    // if (Utils.add(2, 3) !== 5) {
-    //     console.error(" add test failed");
-    //     process.exit(1);
-    // }
-    let failed = false;
+  let failed = false;
 
-    if (Utils.add(2, 3) !== 5) {
-        console.error("add test failed");
-        failed = true;
+  // Test องศาไปฟาเรนไฮต์
+  if (Utils.celsiusToFahrenheit(0) !== 32) {
+    console.error("celsiusToFahrenheit test failed !!!!");
+    failed = true;
+  } else {
+    console.log("celsiusToFahrenheit test passed");
+  }
+
+  if (Utils.celsiusToFahrenheit(100) !== 212) {
+    console.error("celsiusToFahrenheit test failed !!!!");
+    failed = true;
+  } else {
+    console.log("celsiusToFahrenheit test passed");
+  }
+
+  // Test กิโลไปปอนด์
+  const kgResult = Utils.kilogramToPound(1);
+  if (Math.abs(kgResult - 2.20462) > 0.00001) {
+    console.error("kilogramToPound test failed !!!!");
+    failed = true;
+  } else {
+    console.log("kilogramToPound test passed");
+  }
+
+  // Test กิโลเมตรไปไมล์
+  const kmResult = Utils.kilometerToMile(1);
+  if (Math.abs(kmResult - 0.621371) > 0.00001) {
+    console.error("kilometerToMile test failed !!!!");
+    failed = true;
+  } else {
+    console.log("kilometerToMile test passed");
+  }
+
+  //Test นาทีไปชั่วโมง
+  if (Utils.minutesToHours(120) !== 2) {
+    console.error("minutesToHours test failed !!!!");
+    failed = true;
+  } else {
+    console.log("minutesToHours test passed");
+  }
+
+  //Test ชั่วโมงไปวัน
+  if (Utils.hoursToDays(48) !== 2) {
+    console.error("hoursToDays test failed !!!!");
+    failed = true;
+  } else {
+    console.log("hoursToDays test passed");
+  }
+
+  //Test นาทีไปวัน
+  if (Utils.minutesToDays(2880) !== 2) {
+    console.error("minutesToDays test failed !!!!");
+    failed = true;
+  } else {
+    console.log("minutesToDays test passed");
+  }
+
+  // Test สกุลเงินไทย ไป ญี่ปุ่น
+  try {
+    const result = Utils.convertTHBtoJPY(100);
+    if (result !== 420) {
+      console.error("convertTHBtoJPY test failed (expected 420, got " + result + ")");
+      failed = true;
+    } else {
+      console.log("convertTHBtoJPY test passed");
     }
+  } catch (e) {
+    console.error("convertTHBtoJPY threw error:", e.message);
+    failed = true;
+  }
 
-    // if (Utils.add(2, 8) !== 5) {
-    //     console.error("add test failed");
-    //     failed = true;
-    // }
-
-    // if (Utils.add(2, 3) === 5) {
-    //     console.log(0);
-    // }
-    // else {
-    //     console.log(1);
-    // }
-
-    if (failed) {
-        console.error("Some tests failed");
-        process.exit(1);
-      } else {
-        console.log("All tests passed!");
-        process.exit(0);
-    }
-}
+  // สรุป
+  if (failed) {
+    console.error("\n Some tests failed !!!!");
+    process.exit(1);
+  } else {
+    console.log("\n All tests passed successfullyyy");
+    process.exit(0);
+  }
+};
 
 unit_test();
