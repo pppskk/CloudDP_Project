@@ -1,0 +1,12 @@
+function convertTHBtoJPY(thai, rate = 4.2) {
+  if (typeof thai !== "number" || thai < 0) {
+    throw new Error("Invalid THB amount");
+  }
+  if (typeof rate !== "number" || rate <= 0) {
+    throw new Error("Invalid exchange rate");
+  }
+  const japan = thai * rate;
+  return Number(japan.toFixed(2));
+}
+
+module.exports = { convertTHBtoJPY };
